@@ -25,7 +25,7 @@ var articles = {
     'article-one' : {
         title: 'Article One : Lakshmi Aravind',
         heading: 'Article One',
-        date:   'Aug 10, 2017',
+        date:   'Aug 11, 2017',
         content: ` <p>
                     This is the content for article one.This is the content for article one.This is the content for article one.This is the content for article one.This is the content for article one.
                 </p>
@@ -38,14 +38,14 @@ var articles = {
     'article-two' : {
         title: 'Article Two : Lakshmi Aravind',
         heading: 'Article Two',
-        date:   'Aug 10, 2017',
+        date:   'Aug 11, 2017',
         content: ` <p>
                     This is the content for article two.
                 </p>`},
     'article-three' : {
         title: 'Article Three : Lakshmi Aravind',
         heading: 'Article Three',
-        date:   'Aug 10, 2017',
+        date:   'Aug 11, 2017',
         content: ` <p>
                     This is the content for article Three.
                 </p>`
