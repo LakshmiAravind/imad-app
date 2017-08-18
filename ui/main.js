@@ -52,19 +52,38 @@ button.onclick = function(){
         
 };
 
-var nametext = document.getElementById("name");
-var sname = nametext.value;
 var submit = document.getElementById("submit_btn");
 
 submit.onclick = function(){
+
+var nametext = document.getElementById("name");
+var sname = nametext.value;
+
+ //create request
+  var request = new XMLHttpRequest();
+  //capture response in a variable
+  // need to req the counter in server js for the current count 
+  request.onreadystatechange = function (){
+      
+       if (request.readyState === XMLHttpRequest.DONE){
+           if(request.status === 200){
+               var list="";
+               //var names = ['name1','name2','name3','name4'];
+                var names = JSON.parse(request.responseText);
+                for(var i=0; i < names.length;i++){
+                    list += '<li>'+names[i]+'</li>';
+                }
+    
+                var ul = document.getElementById('namelist');
+                ul.innerHTML = list;
+            }
+        }
+      
+  };
   
-    var list="";
-    var names = ['name1','name2','name3','name4'];
+ //make the request
+ request.open('GET','http://lakshmiaravindm.imad.hasura-app.io/submit-name?name='+sname,true);
+ request.send(null);
+   
     
-    for(var i=0; i < names.length;i++){
-        list += '<li>'+names[i]+'</li>';
-    }
-    
-    var ul = document.getElementById('namelist');
-    ul.innerHTML = list;
 };
