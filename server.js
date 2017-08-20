@@ -108,7 +108,7 @@ var pool = new Pool(config);
 
 app.get('/test-db',function(req,res){
 //make select req
-pool.Query('SELECT * FROM sql_test', function(err,result){
+pool.query('SELECT * FROM sql_test', function(err,result){
    if(err){
        res.status(500).send(err.toString());
    } else{
